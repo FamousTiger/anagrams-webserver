@@ -23,9 +23,8 @@ class AnagramsGroups {
         var verboseAnagrams = {};
         Object.keys(dict).forEach(function(key) {
             var keyAnagrams = Array.from(dict[key])
-            if (keyAnagrams.length > 1) {
-                keyAnagrams.forEach(function (word, index) {
-                    verboseAnagrams[word] = [].concat(keyAnagrams.slice(0, index) , keyAnagrams.slice(index+1));
+            keyAnagrams.forEach(function (word, index) {
+                verboseAnagrams[word] = [].concat(keyAnagrams.slice(0, index) , keyAnagrams.slice(index+1));
                 });
             }
             verboseAnagrams[keyPrefix + key] = keyAnagrams; 
