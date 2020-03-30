@@ -67,7 +67,7 @@ export class AnagramsService implements OnModuleInit{
 
     while (line = reader.next()) {
       const words = line.toString().split(" ").filter(item => item);
-      if (words.length > 1) {
+      if (words.length > 0) {
         const key = words[0];
         this.anagrams[key] = words.slice(1);  
         if (key.length > this.longestWordLen) {
